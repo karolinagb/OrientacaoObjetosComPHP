@@ -37,5 +37,30 @@ class Conta
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir);
     }
+
+    public function getSaldo() : float 
+    {
+        return $this->saldo;
+    }
+
+    public function getCpfTitular() : string 
+    {
+        return $this->cpfTitular;
+    }
+
+    public function setCpfTitular(string $cpf) 
+    {
+        $this->cpfTitular = $cpf;
+    }
+
+    public function getNomeTitular() : string 
+    {
+        return $this->nomeTitular;
+    }
+
+    public function setNomeTitular(string $nome) 
+    {
+        $this->nomeTitular = $nome;
+    }
 }
 
