@@ -2,9 +2,10 @@
 
 class Conta
 {
-    public $cpfTitular;
-    public $nomeTitular;
-    public $saldo = 0;
+    //Deixar propriedade sempre privadas e métodos públicos
+    private $cpfTitular;
+    private $nomeTitular;
+    private $saldo = 0;
 
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
@@ -32,7 +33,7 @@ class Conta
             echo "Saldo indisponível";
             return;
         }
-        
+
         $this->sacar($valorATransferir);
         $contaDestino->depositar($valorATransferir);
     }
