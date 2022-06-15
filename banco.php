@@ -10,3 +10,6 @@ $primeiraConta->Sacar(300);
 echo $primeiraConta->getNomeTitular() . PHP_EOL;
 echo $primeiraConta->getCpfTitular() . PHP_EOL;
 echo $primeiraConta->getSaldo() . PHP_EOL;
+
+$segundaConta = new Conta('6789456123', 'Ana');
+var_dump($segundaConta);

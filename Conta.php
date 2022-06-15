@@ -2,7 +2,7 @@
 
 class Conta
 {
-    //Deixar propriedade sempre privadas e métodos públicos
+    //Deixar propriedade sempre privadas e métodos públicos (depende do método)
     private $cpfTitular;
     private $nomeTitular;
     private $saldo;
@@ -10,6 +10,9 @@ class Conta
     public function __construct(string $cpfTitular, string $nomeTitular){
         $this->saldo = 0;     
         $this->cpfTitular = $cpfTitular;
+
+       $this->validaNomeTitular($nomeTitular);
+
         $this->nomeTitular = $nomeTitular;
     }
 
@@ -57,6 +60,13 @@ class Conta
     public function getNomeTitular() : string 
     {
         return $this->nomeTitular;
+    }
+
+    private function validaNomeTitular($nomeTitular){
+        if(strlen($nomeTitular) < 5){
+            echo "Nome precisa ter pelo menos 5 caracteres";
+            exit();
+        }
     }
 }
 
