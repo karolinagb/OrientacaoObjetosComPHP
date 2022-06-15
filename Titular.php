@@ -2,10 +2,10 @@
 
 class Titular
 {
-    private string $cpf;
+    private CPF $cpf;
     private string $nome;
 
-    public function __construct($cpf, $nome){
+    public function __construct(CPF $cpf, $nome){
         $this->cpf = $cpf;
         $this->validaNomeTitular($nome);
         $this->nome = $nome;
@@ -13,7 +13,7 @@ class Titular
 
     public function getCpf() : string 
     {
-        return $this->cpf;
+        return $this->cpf->getNumero();
     }
 
     public function getNome() : string 
