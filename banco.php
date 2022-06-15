@@ -14,6 +14,7 @@ echo $primeiraConta->getSaldo() . PHP_EOL;
 $segundaConta = new Conta('6789456123', 'Karolina');
 var_dump($segundaConta);
 
-new Conta('123', 'dfdsfgdgfgf');
+$outra = new Conta('123', 'dfdsfgdgfgf');
+unset($segundaConta);
 
-echo Conta::getNumeroContas();
+echo PHP_EOL . Conta::getNumeroContas() . PHP_EOL;

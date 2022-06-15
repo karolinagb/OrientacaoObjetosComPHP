@@ -25,6 +25,11 @@ class Conta
         self::$numeroDeContas++;
     }
 
+    //Esse destrutor vai ser executado quando cada uma das contas deixar de existir
+    public function __destruct(){
+        self::$numeroDeContas--;
+    }
+
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
     {
