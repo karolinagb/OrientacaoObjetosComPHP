@@ -5,7 +5,13 @@ class Conta
     //Deixar propriedade sempre privadas e métodos públicos
     private $cpfTitular;
     private $nomeTitular;
-    private $saldo = 0;
+    private $saldo;
+
+    public function __construct(string $cpfTitular, string $nomeTitular){
+        $this->saldo = 0;     
+        $this->cpfTitular = $cpfTitular;
+        $this->nomeTitular = $nomeTitular;
+    }
 
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
@@ -48,19 +54,9 @@ class Conta
         return $this->cpfTitular;
     }
 
-    public function setCpfTitular(string $cpf) 
-    {
-        $this->cpfTitular = $cpf;
-    }
-
     public function getNomeTitular() : string 
     {
         return $this->nomeTitular;
-    }
-
-    public function setNomeTitular(string $nome) 
-    {
-        $this->nomeTitular = $nome;
     }
 }
 
