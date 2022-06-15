@@ -4,11 +4,13 @@ class Titular
 {
     private CPF $cpf;
     private string $nome;
+    private Endereco $endereco;
 
-    public function __construct(CPF $cpf, $nome){
+    public function __construct(CPF $cpf, $nome, Endereco $endereco){
         $this->cpf = $cpf;
         $this->validaNomeTitular($nome);
         $this->nome = $nome;
+        $this->endereco = $endereco;
     }
 
     public function getCpf() : string 
@@ -27,4 +29,9 @@ class Titular
             exit();
         }
     }
+
+    public function GetEndereco(Endereco $endereco): Endereco
+    {
+        return $this->endereco;
+    }        
 }
