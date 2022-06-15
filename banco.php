@@ -11,5 +11,9 @@ echo $primeiraConta->getNomeTitular() . PHP_EOL;
 echo $primeiraConta->getCpfTitular() . PHP_EOL;
 echo $primeiraConta->getSaldo() . PHP_EOL;
 
-$segundaConta = new Conta('6789456123', 'Ana');
+$segundaConta = new Conta('6789456123', 'Karolina');
 var_dump($segundaConta);
+
+new Conta('123', 'dfdsfgdgfgf');
+
+echo Conta::getNumeroContas();

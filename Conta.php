@@ -3,9 +3,13 @@
 class Conta
 {
     //Deixar propriedade sempre privadas e métodos públicos (depende do método)
+    //Esses atributos são da instância, dos objetos que forem criados
     private $cpfTitular;
     private $nomeTitular;
-    private $saldo;
+    public $saldo;
+
+    //Atributo static é um atributo da forma do bolo, ou da classe Conta em si
+    private static $numeroDeContas = 0;
 
     public function __construct(string $cpfTitular, string $nomeTitular){
         $this->saldo = 0;     
@@ -14,6 +18,11 @@ class Conta
        $this->validaNomeTitular($nomeTitular);
 
         $this->nomeTitular = $nomeTitular;
+
+        //Quando tenho um atributo estático eu não acesso pelo $this (que referencia a instância)
+        //Eu acesso pelo nome da própria classe ou através da palavra self
+        //Conta::$numeroDeContas++;
+        self::$numeroDeContas++;
     }
 
     // Se eu não colocar public, o php entender automaticamente como public
@@ -67,6 +76,11 @@ class Conta
             echo "Nome precisa ter pelo menos 5 caracteres";
             exit();
         }
+    }
+
+    //Método estático para recuperar o numero de contas criadas
+    public static function getNumeroContas() : int{
+        return self::$numeroDeContas;
     }
 }
 
