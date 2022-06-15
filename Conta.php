@@ -4,20 +4,17 @@ class Conta
 {
     //Deixar propriedade sempre privadas e métodos públicos (depende do método)
     //Esses atributos são da instância, dos objetos que forem criados
-    private $cpfTitular;
-    private $nomeTitular;
+    //Quando vemos atributos relacionados entre si ou comportamentos (e não relacionados a classe em si), 
+    //talvez seja indícios para criarmos outa classe
+    private Titular $titular; //Instancia de uma classe com instancia de outra classe = composição de objetos
     public $saldo;
 
     //Atributo static é um atributo da forma do bolo, ou da classe Conta em si
     private static $numeroDeContas = 0;
 
-    public function __construct(string $cpfTitular, string $nomeTitular){
+    public function __construct(Titular $titular){
         $this->saldo = 0;     
-        $this->cpfTitular = $cpfTitular;
-
-       $this->validaNomeTitular($nomeTitular);
-
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
 
         //Quando tenho um atributo estático eu não acesso pelo $this (que referencia a instância)
         //Eu acesso pelo nome da própria classe ou através da palavra self
@@ -66,26 +63,17 @@ class Conta
         return $this->saldo;
     }
 
-    public function getCpfTitular() : string 
-    {
-        return $this->cpfTitular;
-    }
-
-    public function getNomeTitular() : string 
-    {
-        return $this->nomeTitular;
-    }
-
-    private function validaNomeTitular($nomeTitular){
-        if(strlen($nomeTitular) < 5){
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
-        }
-    }
-
     //Método estático para recuperar o numero de contas criadas
     public static function getNumeroContas() : int{
         return self::$numeroDeContas;
+    }
+
+    public function getNomeTitular(){
+        return $this->titular->getNome();
+    }
+
+    public function getCpfTitular(){
+        return $this->titular->getCpf();
     }
 }
 
