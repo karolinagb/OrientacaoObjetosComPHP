@@ -17,7 +17,8 @@ class CPF{
         [
             'options' => 
             [
-                'regexp' => '/^[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}$/'
+                //- Adicionadas contra barras antes do ponto e do traço para identificar o caracter como realmente um ponto e um traço
+                'regexp' => '/^[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}$/'
             ]
         ]);
 
