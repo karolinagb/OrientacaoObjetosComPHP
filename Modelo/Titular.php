@@ -1,10 +1,5 @@
 <?php
 
-// A separação de namespaces no php é usando contra barra
-namespace Alura\Banco\Modelo\Conta; 
-
-//Usar a classe Pessoa do namespace especificado
-//Isso tem que estar fora e antes de tudo
 use Alura\Banco\Modelo\Pessoa;
 use Alura\Banco\Modelo\Endereco;
 use Alura\Banco\Modelo\CPF;
