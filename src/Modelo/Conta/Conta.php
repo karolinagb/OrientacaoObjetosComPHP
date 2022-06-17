@@ -32,13 +32,16 @@ class Conta
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
     {
+        $tarifaSaque = $valorASacar * 0.05;
+        $valorSaque = $valorASacar + $tarifaSaque;
+
         //this se refere a referência atual que chamou esse método
-        if($valorASacar > $this->saldo){
+        if($valorSaque > $this->saldo){
             echo "Saldo indisponível";
             return;
         }
 
-        $this->saldo -= $valorASacar;
+        $this->saldo -= $valorSaque;
     }
 
     public function depositar(float $valorADepositar): void{
