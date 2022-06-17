@@ -10,7 +10,7 @@ require_once 'autoload.php';
 $cpf = new CPF('123.456.789-99');
 $endereco = new Endereco('a', 'b', 'c', '12');
 $titular = new Titular($cpf, 'Karol', $endereco);
-$conta = new Conta($titular);
+$conta = new Conta($titular, 2);
 
 $conta->depositar(500);
 $conta->Sacar(100);

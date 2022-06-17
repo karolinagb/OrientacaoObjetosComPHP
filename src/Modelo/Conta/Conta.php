@@ -13,10 +13,15 @@ class Conta
 
     //Atributo static é um atributo da forma do bolo, ou da classe Conta em si
     private static $numeroDeContas = 0;
+    /**
+     * @var int $tipo 1 == Conta Corrente; 2 = Poupança
+     */
+    private int $tipo;
 
-    public function __construct(Titular $titular){
+    public function __construct(Titular $titular, int $tipo){
         $this->saldo = 0;     
         $this->titular = $titular;
+        $this->tipo = $tipo;
 
         //Quando tenho um atributo estático eu não acesso pelo $this (que referencia a instância)
         //Eu acesso pelo nome da própria classe ou através da palavra self
@@ -32,7 +37,14 @@ class Conta
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
     {
-        $tarifaSaque = $valorASacar * 0.05;
+        if($this->tipo == 1){
+
+            $tarifaSaque = $valorASacar * 0.05;
+        }
+        else{
+            $tarifaSaque = $valorASacar * 0.03;
+        }
+        
         $valorSaque = $valorASacar + $tarifaSaque;
 
         //this se refere a referência atual que chamou esse método
