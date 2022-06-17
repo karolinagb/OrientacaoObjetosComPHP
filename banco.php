@@ -1,9 +1,15 @@
 <?php
 
-require_once 'Conta.php';
-require_once 'Titular.php';
-require_once 'CPF.php';
-require_once 'Endereco.php';
+require_once 'src/Modelo/Conta/Conta.php';
+require_once 'src/Modelo/Pessoa.php';
+require_once 'src/Modelo/Conta/Titular.php';
+require_once 'src/Modelo/CPF.php';
+require_once 'src/Modelo/Endereco.php';
+
+use Alura\Banco\Modelo\Conta\Titular;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+use Alura\Banco\Modelo\Conta\Conta;
 
 //Sempre que o new por executado, o método __construct vai ser executado também
 $endereco = new Endereco('Petropolis', 'um bairro', 'minha rua', '71B');

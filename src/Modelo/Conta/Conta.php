@@ -1,5 +1,7 @@
 <?php
 
+namespace Alura\Banco\Modelo\Conta;
+
 class Conta
 {
     //Deixar propriedade sempre privadas e métodos públicos (depende do método)

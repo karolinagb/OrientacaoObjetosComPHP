@@ -1,5 +1,10 @@
 <?php
 
+//Não é obrigatório, mas é interessante colocar o nome do namespace igual o nome da pasta
+// Alura\Banco\   = namespace raiz, isso deixa o namespace mais único do meu projeto pois pode haver
+//classes que eu baixe da internet com nomes e até namespaces iguais
+namespace Alura\Banco\Modelo;
+
 class Pessoa
 {
     //protected = só as classes filhas podem acessar

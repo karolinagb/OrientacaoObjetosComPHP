@@ -1,5 +1,13 @@
 <?php
 
+// A separação de namespaces no php é usando contra barra
+namespace Alura\Banco\Modelo\Conta; 
+
+//Usar a classe Pessoa do namespace especificado
+use Alura\Banco\Modelo\Pessoa;
+use Alura\Banco\Modelo\Endereco;
+use Alura\Banco\Modelo\CPF;
+
 //Titular herda de Pessoa
 class Titular extends Pessoa
 {
