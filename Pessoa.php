@@ -2,11 +2,13 @@
 
 class Pessoa
 {
+    //protected = só as classes filhas podem acessar
     protected string $nome;
-    protected CPF $cpf;
+    private CPF $cpf;
 
     public function __construct(string $nome, CPF $cpf)
     {
+        $this->validaNomeTitular($nome);
         $this->nome = $nome;
         $this->cpf = $cpf;
     }
@@ -20,8 +22,6 @@ class Pessoa
     {
         return $this->nome;
     }
-
-    
 
     protected function validaNomeTitular($nome){
         if(strlen($nome) < 5){
