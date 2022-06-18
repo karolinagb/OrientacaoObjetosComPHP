@@ -2,7 +2,9 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-class Conta
+//classe abstrata = classe nao esta pronta, voce precisa extender para completar a classe
+//Assim ela nao pode mais ser instanciada e sim só suas classes filhas
+abstract class Conta
 {
     //Deixar propriedade sempre privadas e métodos públicos (depende do método)
     //Esses atributos são da instância, dos objetos que forem criados
@@ -32,7 +34,9 @@ class Conta
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
     {
-        $tarifaSaque = $valorASacar * 0.05;
+        //Posso usar o metodo percentual aqui pois sei que alguem vai implementar ele, 
+        //mesmo que a classe generica nao implemente
+        $tarifaSaque = $valorASacar * $this->percentualTarifa();
 
         $valorSaque = $valorASacar + $tarifaSaque;
 
@@ -54,15 +58,7 @@ class Conta
         $this->saldo += $valorADepositar;
     }
 
-    public function transferir(float $valorATransferir, Conta $contaDestino) : void{
-        if($valorATransferir > $this->saldo){
-            echo "Saldo indisponível";
-            return;
-        }
-
-        $this->sacar($valorATransferir);
-        $contaDestino->depositar($valorATransferir);
-    }
+    
 
     public function getSaldo() : float 
     {
@@ -81,5 +77,10 @@ class Conta
     public function getCpfTitular(){
         return $this->titular->getCpf();
     }
+
+    //Quando tenho um método abstrato todas as classes que estenderem dela precisam implementar
+    //Dessa forma eu não preciso implementar aqui na classe generica esse metodo
+    //Métodos abstratos tem que estar tambem em classes abstratas
+    abstract protected function percentualTarifa(): float;
 }
 
