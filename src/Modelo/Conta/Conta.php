@@ -9,19 +9,14 @@ class Conta
     //Quando vemos atributos relacionados entre si ou comportamentos (e não relacionados a classe em si), 
     //talvez seja indícios para criarmos outa classe
     private Titular $titular; //Instancia de uma classe com instancia de outra classe = composição de objetos
-    public $saldo;
+    protected $saldo;
 
     //Atributo static é um atributo da forma do bolo, ou da classe Conta em si
     private static $numeroDeContas = 0;
-    /**
-     * @var int $tipo 1 == Conta Corrente; 2 = Poupança
-     */
-    private int $tipo;
 
-    public function __construct(Titular $titular, int $tipo){
+    public function __construct(Titular $titular){
         $this->saldo = 0;     
         $this->titular = $titular;
-        $this->tipo = $tipo;
 
         //Quando tenho um atributo estático eu não acesso pelo $this (que referencia a instância)
         //Eu acesso pelo nome da própria classe ou através da palavra self
@@ -37,14 +32,8 @@ class Conta
     // Se eu não colocar public, o php entender automaticamente como public
     public function Sacar(float $valorASacar) : void //Função dentro da classe = método
     {
-        if($this->tipo == 1){
+        $tarifaSaque = $valorASacar * 0.05;
 
-            $tarifaSaque = $valorASacar * 0.05;
-        }
-        else{
-            $tarifaSaque = $valorASacar * 0.03;
-        }
-        
         $valorSaque = $valorASacar + $tarifaSaque;
 
         //this se refere a referência atual que chamou esse método
