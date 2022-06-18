@@ -4,6 +4,7 @@ namespace Alura\Banco\Servico;
 
 use Alura\Banco\Modelo\Funcionario;
 
+//Classe de serviço nao representa nada palpavel do mundo real
 class ControladorBonificacoes
 {
     private $totalBonificacao = 0;
