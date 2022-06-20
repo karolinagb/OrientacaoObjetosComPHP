@@ -5,6 +5,7 @@ namespace Alura\Banco\Modelo\Funcionario;
 use Alura\Banco\Modelo\Pessoa;
 use Alura\Banco\Modelo\CPF;
 
+//Aprendendo polimorfismo
 abstract class Funcionario extends Pessoa
 {
     private string $cargo;
