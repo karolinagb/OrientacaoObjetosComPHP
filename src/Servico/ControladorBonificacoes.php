@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Servico;
 
-use Alura\Banco\Modelo\Funcionario;
+use Alura\Banco\Modelo\Funcionario\Funcionario;
 
 //Classe de serviço nao representa nada palpavel do mundo real
 class ControladorBonificacoes
