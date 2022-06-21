@@ -12,13 +12,13 @@ use Alura\Banco\Servico\ControladorBonificacoes;
 $cpf = new CPF('123.456.789-99');
 
 $doisFuncionario = 
-new Gerente('Thales', $cpf, 'Dev', 5000.0);
+new Gerente('Thales', $cpf, 5000.0);
 
 $tresFuncionario = 
-new Diretor('Thales', $cpf, 'Dev', 5000.0);
+new Diretor('Thales', $cpf, 5000.0);
 
 $quatroFuncionario = 
-new Desenvolvedor('Thales', $cpf, 'Dev', 5000.0);
+new Desenvolvedor('Thales', $cpf, 5000.0);
 
 $quatroFuncionario->sobreDeNivel();
 
