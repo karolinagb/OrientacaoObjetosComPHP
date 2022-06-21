@@ -20,6 +20,14 @@ class Endereco{
         $this->numero = $numero;
     }
 
+    //Recomenda-se não criar métodos próprios com __ pois esse padrão é usado para métodos mágicos do php
+    public function __toString(): string
+    {
+        //Essas propriedades só podem ser acessadas na classe, então aqui eu acesso diretamente elas para imprimir
+        //como string
+        return "$this->rua, $this->numero, $this->bairro, $this->cidade";
+    }
+
 	function getCidade(): string {
 		return $this->cidade;
 	}
