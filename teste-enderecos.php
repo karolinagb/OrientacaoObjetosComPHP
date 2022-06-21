@@ -16,3 +16,6 @@ $segundoEndereco = new Endereco('Rio de Janeiro', 'Copacabana', 'Rua final', '81
 //e se a classe o tiver, seu retorno é utilizado.
 echo $umEndereco . PHP_EOL;
 echo $segundoEndereco . PHP_EOL;
+
+echo $umEndereco->rua . PHP_EOL;
+echo $umEndereco->bairro . PHP_EOL;

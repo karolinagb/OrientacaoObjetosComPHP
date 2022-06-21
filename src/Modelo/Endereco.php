@@ -28,6 +28,16 @@ class Endereco{
         return "$this->rua, $this->numero, $this->bairro, $this->cidade";
     }
 
+    public function __get(string $nomeAtributo)
+    {
+        //Pegar o parametro passado e chamar o metodo correspondente
+
+        //ucfirst = coloca letra maiuscula na primeira letra
+        //Concatenando com o nome do metodo
+        $metodo = 'get' . ucfirst($nomeAtributo);
+        return $this->$metodo();
+    }
+
 	function getCidade(): string {
 		return $this->cidade;
 	}
