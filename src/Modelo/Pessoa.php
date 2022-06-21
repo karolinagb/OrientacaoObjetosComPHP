@@ -5,7 +5,7 @@
 //classes que eu baixe da internet com nomes e até namespaces iguais
 namespace Alura\Banco\Modelo;
 
-class Pessoa
+abstract class Pessoa
 {
     //protected = só as classes filhas podem acessar
     protected string $nome;
