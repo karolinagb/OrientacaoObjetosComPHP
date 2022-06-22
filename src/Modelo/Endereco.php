@@ -4,6 +4,10 @@ namespace Alura\Banco\Modelo;
 
 final class Endereco{
 
+    //Quando colocamos o use direto dentro de uma classe estamos usando uma trait
+    //Se colocarmos o use fora de tudo, estou usando um namespace
+    use AcessoPropriedades;
+
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -26,16 +30,6 @@ final class Endereco{
         //Essas propriedades só podem ser acessadas na classe, então aqui eu acesso diretamente elas para imprimir
         //como string
         return "$this->rua, $this->numero, $this->bairro, $this->cidade";
-    }
-
-    public function __get(string $nomeAtributo)
-    {
-        //Pegar o parametro passado e chamar o metodo correspondente
-
-        //ucfirst = coloca letra maiuscula na primeira letra
-        //Concatenando com o nome do metodo
-        $metodo = 'get' . ucfirst($nomeAtributo);
-        return $this->$metodo();
     }
 
 	function getCidade(): string {

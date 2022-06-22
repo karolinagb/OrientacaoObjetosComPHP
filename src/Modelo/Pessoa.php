@@ -7,6 +7,8 @@ namespace Alura\Banco\Modelo;
 
 abstract class Pessoa
 {
+    use AcessoPropriedades;
+    
     //protected = só as classes filhas podem acessar
     protected string $nome;
     private CPF $cpf;

@@ -2,6 +2,7 @@
 
 use Alura\Banco\Modelo\Conta\{ContaPoupanca, ContaCorrente, Titular};
 use Alura\Banco\Modelo\{CPF, Endereco};
+use Alura\Banco\Modelo\Funcionario\Desenvolvedor;
 
 require_once 'autoload.php';
 
