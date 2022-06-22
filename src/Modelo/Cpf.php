@@ -2,7 +2,8 @@
 
 namespace Alura\Banco\Modelo;
 
-class CPF{
+//final = essa é a classe final, não pode haver herança da classe CPF
+final class CPF{
     private string $numero;
 
     public function __construct(string $numero){
